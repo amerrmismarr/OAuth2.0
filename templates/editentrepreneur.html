@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+	<div class = "row" align="center" >
+		<div class="menu-item">
+			<h1>Edit Menu Item</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div>
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{entrepreneur.name }}">
+					<label for="information">Information:</label>
+					<textarea class="form-control"  rows="3" name="information">{{entrepreneur.information}}</textarea>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span aria-hidden="true"></span>Save</button>	
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

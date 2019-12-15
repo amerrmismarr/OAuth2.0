@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+	
+	<div class="row" align="center">
+		<div class = "menu-item">
+		<h1>{{ century.name }}</h1>
+		</div>
+	</div>
+
+	<div align="left">
+		<a href="{{url_for('newEntrepreneur', century_id = century.id )}}">
+			<button class="btn btn-default" id="new-entrepreneur">
+			<span ></span>Add Entrepreneur
+			</button>
+		</a>
+	</div>
+	
+	
+	{% if entrepreneurs !=[] %}	
+		<div class="row">
+			<div>
+				{% for e in entrepreneurs %}
+					<div class="menu-item">
+						<h3><a href='{{url_for('showInformation', century_id = century.id, list_id=e.id ) }}'>{{e.name}}</a></h3>
+						<a href='{{url_for('editEntrepreneur', century_id = century.id, list_id=e.id ) }}'>Edit</a> | 
+						<a href='{{url_for('deleteEntrepreneur', century_id = century.id, list_id=e.id ) }}'>Delete</a>
+					</div>
+				{% endfor %}
+			</div>
+	{% endif %}
+{% endblock %}

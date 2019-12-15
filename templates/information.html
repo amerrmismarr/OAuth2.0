@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+    <div class="row" align="center">
+        <div class = "menu-item">
+        <h1>{{ entrepreneur.name }}
+        </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="menu-item">
+        <h3>{{entrepreneur.information}}</h3>
+        </div>      
+    </div>
+{% endblock %}
